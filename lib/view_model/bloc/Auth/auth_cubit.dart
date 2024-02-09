@@ -3,6 +3,9 @@ import 'package:ecommerce_eraasoft/view_model/data/network/DioHelper/dio_helper.
 import 'package:ecommerce_eraasoft/view_model/data/network/DioHelper/endpoints.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../data/local/shared_preference/keys.dart';
+import '../../data/local/shared_preference/shared_preferences.dart';
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -25,6 +28,7 @@ class AuthCubit extends Cubit<AuthState> {
    }).then((value){
     authModel =AuthModel.fromJson(value.data);
     print(value.data);
+    LocalData.set(key:SharedKeys.token,value:authModel!.data!.token);
     emit(RegistrationSuccessState(
      message: authModel!.message!,
      status: authModel!.status!,

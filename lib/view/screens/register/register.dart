@@ -5,6 +5,8 @@ import 'package:ecommerce_eraasoft/view/components/widgets/text_form_field_widge
 import 'package:ecommerce_eraasoft/view/screens/Login/login_screen.dart';
 import 'package:ecommerce_eraasoft/view_model/bloc/Auth/auth_cubit.dart';
 import 'package:ecommerce_eraasoft/view_model/bloc/show_text/show_or_hide_cubit.dart';
+import 'package:ecommerce_eraasoft/view_model/data/local/shared_preference/keys.dart';
+import 'package:ecommerce_eraasoft/view_model/data/local/shared_preference/shared_preferences.dart';
 import 'package:ecommerce_eraasoft/view_model/utilis/colors/colors.dart';
 import 'package:ecommerce_eraasoft/view_model/utilis/navigation/navigation.dart';
 import 'package:flutter/material.dart';

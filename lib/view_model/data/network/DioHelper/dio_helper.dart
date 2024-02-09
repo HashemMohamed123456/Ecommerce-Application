@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:ecommerce_eraasoft/view_model/data/network/DioHelper/endpoints.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 class DioHelper{
   static late Dio dio;
   static void init(){
@@ -9,6 +10,14 @@ class DioHelper{
         receiveDataWhenStatusError: true
       )
     );
+    dio.interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        error: true,
+        compact: true,
+        maxWidth: 90));
   }
 static Future<Response>post({
   required String endpoint,
