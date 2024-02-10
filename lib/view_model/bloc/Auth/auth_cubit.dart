@@ -28,7 +28,6 @@ class AuthCubit extends Cubit<AuthState> {
    }).then((value){
     authModel =AuthModel.fromJson(value.data);
     print(value.data);
-    LocalData.set(key:SharedKeys.token,value:authModel!.data!.token);
     emit(RegistrationSuccessState(
      message: authModel!.message!,
      status: authModel!.status!,

@@ -31,6 +31,7 @@ class RegistrationScreen extends StatelessWidget {
         var snackBar=Constructions.constructSnackBar(num: 1, title:'Sign Up Success', message:state.message);
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
         Navigation.pushAndRemove(context, const HomeLayOutScreen());
+        LocalData.set(key: 'token', value:state.token);
       }else{
         var snackBar=Constructions.constructSnackBar(num: 0, title:'Sign Up Failed', message:state.message);
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
